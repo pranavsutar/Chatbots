@@ -92,6 +92,142 @@
                 "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
                 "What did the buffalo say when his son left for college? Bison."
             ]
+        },
+        {
+            "tag": "hours",
+            "patterns": [
+                "What are your hours?",
+                "When are you open?",
+                "Are you open today?",
+                "When do you open today?",
+                "What are your hours today?"
+            ],
+            "responses": [
+                "We're open every day 9am-9pm",
+                "Our hours are 9am-9pm every day"
+            ]
+        },
+        {
+            "tag": "shopName",
+            "patterns": [
+                "What's your shop name?",
+                "What do I call this place?",
+                "What is this place?"
+            ],
+            "responses": [
+                "Our name is CoffeeHouse, welcome!",
+                "We are CoffeeHouse!",
+                "People call us CoffeeHouse, but you can just call us with love 'MyCafe'"
+            ]
+        },
+        {
+            "tag": "branches",
+            "patterns": [
+                "Where are you located?",
+                "Where is your shop?",
+                "Where is your store?",
+                "Where do I find you?",
+                "Where are your branches?",
+                "Where is your cafe?"
+            ],
+            "responses": [
+                "We have branches in Delhi, Mumbai, Chennai and Kolkata",
+                "We have branches within Delhi, Mumbai, Chennai and Kolkata",
+                "Our branches are spread across Delhi, Mumbai, Chennai and Kolkata",
+                "You can find us in Delhi, Mumbai, Chennai and Kolkata",
+                "We are in Delhi, Mumbai, Chennai and Kolkata",
+                "Branches? We are in Delhi, Mumbai, Chennai and Kolkata"
+            ]
+        },
+        {
+            "tag": "history",
+            "patterns":[
+                "When was your cafe established?",
+                "When did you start?",
+                "From when are you in this business?",
+                "How old are you?",
+                "What year was this cafe built?",
+                "How long have you been in this business?"
+            ],
+            "responses":[
+                "We were established in 2010",
+                "We started in 2010",
+                "We are in this business since 2010",
+                "Our cafe was built in 2010",
+                "We are in this business since 2010",
+                "We are from 2010"
+            ]
+        },
+        {
+            "tag": "owner",
+            "patterns":[
+                "Who is the owner of this cafe?",
+                "Who is the owner?",
+                "Who is the founder?",
+                "Who is the CEO?",
+                "Who is the manager?",
+                "Who is the boss?"
+            ],
+            "responses":[
+                "The owner of this cafe is Mr. Pranav",
+                "Mr. Pranav is the owner of this cafe",
+                "Mr. Pranav is the founder, owner, CEO and manager of this cafe",
+                "The cafe is owned, managed and founded by Mr. Pranav",
+                "This cafe was founded by Mr. Pranav"
+            ]
+        },
+        {
+            "tag": "howAreYou",
+            "patterns":[
+                "How are you?",
+                "How are you doing?",
+                "How is it going?",
+                "How is everything?",
+                "How do you do?",
+                "Is everything fine?",
+                "Are you fine?",
+                "Are you okay?",
+                "Are you alright?",
+                "Are you good?",
+                "Are you well?",
+                "How are you feeling?",
+                "How are you today?",
+                "I hope you are fine"
+            ],
+            "responses":[
+                "I am dynamically awesome, thanks for asking",
+                "I am doing very great, thanks for asking",
+                "I am doing good, thank you",
+                "I am doing fine, thank you",
+                "I am wonderful, how about you?"
+            ]
+        },{
+            "tag": "menu",
+            "patterns": [
+                "Can you show me the menu?",
+                "What's on the menu?",
+                "Can you tell me what do you have on the menu?",
+                "Can you tell me what's there on the menu?",
+                "What all is available here?",
+                "What all do you have here?",
+                "What all do you have in your menu?"
+            ],
+            "responses":[
+                "We have coffee, tea, snacks, beverages, shakes, ice-creams, etc.",
+                "We have coffee, tea, snacks, beverages, shakes, ice-creams, etc. on our menu",
+                "We do serve coffee, tea, snacks, beverages, shakes, ice-creams, etc."
+            ]
+            
+        },
+        {
+            "tag": "coffee",
+            "patterns":[
+                "What all coffee do you have?",
+                "What all coffee do you serve?"
+            ],
+            "responses":[
+                "In coffee, we have Espresso, Cappuccino, Latte, Mocha, Americano, Macchiato, etc."
+            ]
         }
     ]
 }

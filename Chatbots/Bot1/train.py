@@ -1,5 +1,5 @@
-import json, nltk, numpy as np, torch, torch.nn as nn
-from torch.utils.data import Dataset, DataLoader
+import json, nltk, numpy as np, random # , torch, torch.nn as nn
+# from torch.utils.data import Dataset, DataLoader
 
 # nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
@@ -21,8 +21,8 @@ def bag_ofwords(tokenized_sentence, all_words):
 
 intents = json.loads(open('intents.json').read())
 
-print(str(intents)[:60])
-print(type(intents))
+# print(str(intents)[:60])
+# print(type(intents))
 
 words = []
 classes = []
@@ -40,8 +40,8 @@ for intent in intents['intents']:
             classes.append(intent['tag'])
 
 # print(words)
-for d in documents:
-    print(d)
+# for d in documents:
+#     print(d)
 
 trainX = []
 trainY = []
@@ -55,6 +55,38 @@ for doc in documents:
 trainX = np.array(trainX)
 trainY = np.array(trainY)
 
-print(trainX)
-print(trainY)
+# print(trainX)
+# print(trainY)
 
+# Naive Bayes
+from sklearn.naive_bayes import GaussianNB
+model = GaussianNB()
+model.fit(trainX, trainY)
+
+
+# SVM
+from sklearn.svm import SVC
+model = SVC(kernel='linear', C=1, gamma='auto')
+model.fit(trainX, trainY)
+
+
+
+# Now input a sentence and predict the class
+# sentence = "How long does delivery take?"
+# sentence = tokenize(sentence)
+# sentence = bag_ofwords(sentence, words)
+# sentence = np.array(sentence).reshape(1,-1)
+# print(sentence)
+# print(model.predict(sentence))
+# # print(classes[])
+# import random
+# print(random.choice(intents['intents'][model.predict(sentence)[0]]['responses']))
+
+
+while True:
+    sentence = input('You: ')
+    sentence = tokenize(sentence)
+    sentence = bag_ofwords(sentence, words)
+    sentence = np.array(sentence).reshape(1,-1)
+    response = random.choice(intents['intents'][model.predict(sentence)[0]]['responses'])
+    print(f'Bot: {response}')

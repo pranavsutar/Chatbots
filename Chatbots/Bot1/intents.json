@@ -7,12 +7,14 @@
                 "Hey",
                 "How are you",
                 "Is anyone there?",
-                "Hello",
-                "Good day"
+                "Hello", 
+                "Hello buddy", 
+                "Hello there",
+                "Good morning", "Good Afternoon"
             ],
             "responses": [
                 "Hey :-)",
-                "Hello, thanks for visiting",
+                "Hello, welcome to CoffeeHouse",
                 "Hi there, what can I do for you?",
                 "Hi there, how can I help?"
             ]

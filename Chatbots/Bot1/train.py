@@ -21,13 +21,15 @@ def bag_ofwords(tokenized_sentence, all_words):
 
 intents = json.loads(open('intents.json').read())
 
+def getintents():
+    return intents
 # print(str(intents)[:60])
 # print(type(intents))
 
 words = []
 classes = []
 documents = []
-ignore_letters = ['?', '!', '.', ',', "'s", "'ve", "'re", "'ll", "'m", "'d", "'t", 'a', 'an', 'the', 'is', 'are', 'was', 'were', 'am', 'do', 'does', 'did', 'can', 'could', 'may', 'might', 'shall', 'should', 'will', 'would', 'have', 'has', 'had', 'of', 'at', 'to', 'in', 'on', 'for', 'with', 'by', 'from', 'about', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'up', 'down', 'out', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
+ignore_letters = ['?', '!', '.', ',', "'s", "'ve", "'re", "'ll", "'m", "'d", "'t", 'a', 'an', 'the', 'is', 'are', 'was', 'were', 'do', 'does', 'did', 'can', 'could', 'may', 'might', 'shall', 'should', 'will', 'would', 'have', 'has', 'had', 'of', 'at', 'to', 'in', 'on', 'for', 'with', 'from', 'about', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'up', 'down', 'out', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'no', 'nor', 'not', 'so', 'than', 'too',  's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
 for intent in intents['intents']:
     for pattern in intent['patterns']:
         word_list = tokenize(pattern)
@@ -69,6 +71,12 @@ from sklearn.svm import SVC
 model = SVC(kernel='linear', C=1, gamma='auto')
 model.fit(trainX, trainY)
 
+import pickle
+pickle.dump(model, open('modelsvm.pkl', 'wb'))
+
+
+# load model
+model = pickle.load(open('modelsvm.pkl', 'rb'))
 
 
 # Now input a sentence and predict the class

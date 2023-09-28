@@ -65,18 +65,19 @@ from sklearn.naive_bayes import GaussianNB
 model = GaussianNB()
 model.fit(trainX, trainY)
 
+import pickle
+pickle.dump(model, open('modelnaiveb.pkl', 'wb'))
 
 # SVM
 from sklearn.svm import SVC
-model = SVC(kernel='linear', C=1, gamma='auto')
+model = SVC(kernel='linear', C=1, gamma='auto', probability=True)
 model.fit(trainX, trainY)
 
-import pickle
 pickle.dump(model, open('modelsvm.pkl', 'wb'))
 
 
 # load model
-model = pickle.load(open('modelsvm.pkl', 'rb'))
+# model = pickle.load(open('modelsvm.pkl', 'rb'))
 
 
 # Now input a sentence and predict the class
@@ -91,10 +92,17 @@ model = pickle.load(open('modelsvm.pkl', 'rb'))
 # print(random.choice(intents['intents'][model.predict(sentence)[0]]['responses']))
 
 
-while True:
-    sentence = input('You: ')
-    sentence = tokenize(sentence)
-    sentence = bag_ofwords(sentence, words)
-    sentence = np.array(sentence).reshape(1,-1)
-    response = random.choice(intents['intents'][model.predict(sentence)[0]]['responses'])
-    print(f'Bot: {response}')
+# while True:
+#     sentence = input('You: ')
+#     sentence = tokenize(sentence)
+#     sentence = bag_ofwords(sentence, words)
+#     sentence = np.array(sentence).reshape(1,-1)
+#     response = random.choice(intents['intents'][model.predict(sentence)[0]]['responses'])
+#      # Check the probability of the predicted intent for naive bayes model
+#     prob = np.max(model.predict_proba(sentence))*100
+#     if prob < 15:
+#         response = "I don't understand, try again"
+#     print(f'Confidence: {prob:.2f}%')
+
+
+#     print(f'Bot: {response}')
